@@ -4,15 +4,26 @@ Solutions to the lab
 【Chapter4】: Advanced CRUD Operations:
 
 1.Query Operators - Comparision
-db.trips.find({ "tripduration": { "$lte" : 70 }, "usertype": { "$ne": "Subscriber" } }).pretty()
+db.trips.find({ "tripduration": 
+{ "$lte" : 70 },
+"usertype": { "$ne": "Subscriber" }
+}).pretty()
 
 
 2.Query Operators - Logic
-db.routes.find({ "$and":[ { "$or" :[ { "dst_airport": "KZN" }, { "src_airport": "KZN" } ] },{ "$or" :[ { "airplane": "CR2" }, { "airplane": "A81" } ] }   ]}).pretty()
+db.routes.find({ "$and":[ { "$or" :
+[ { "dst_airport": "KZN" }, 
+{ "src_airport": "KZN" } ] },
+{ "$or" :[ { "airplane": "CR2" }, 
+{ "airplane": "A81" } ] }   
+]}).pretty()
 
 
 3.Expressive Query Operator
-db.trips.find({ "$expr": { "$eq": [ "$end station id", "$start station id"] } }).count()
+db.trips.find({ "$expr": 
+{ "$eq":
+[ "$end station id", "$start station id"] }
+}).count()
 db.trips.find({ "$expr": {
 
                                 "$and": [
